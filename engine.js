@@ -29,13 +29,13 @@
     { id: 'jelly', land: 1, name: '水母帽', body: 'tall', colors: ['#9fd8ff', '#c2b5ff', '#a5f0e0'], note: '軟軟的，但耐力很好。' },
     { id: 'snowball', land: 2, name: '雪糰糰', body: 'round', colors: ['#f4fbff', '#e7f2ff', '#f7f0ff'], note: '圍巾是奶奶織的。' },
     { id: 'icehorn', land: 2, name: '冰角角', body: 'pear', colors: ['#9cc8f5', '#a9b7f7', '#8fdde8'], note: '角上的冰永遠不融。' },
-    { id: 'yeti', land: 2, name: '大耳雪怪', body: 'tall', colors: ['#d8d4f2', '#c8e0ea', '#e6d9cf'], note: '耳朵大，聽得到每句加油。' },
+    { id: 'yeti', land: 2, name: '大耳雪球', body: 'tall', colors: ['#d8d4f2', '#c8e0ea', '#e6d9cf'], note: '耳朵大，聽得到每句加油。' },
     { id: 'lava', land: 3, name: '熔岩仔', body: 'square', colors: ['#7a4a55', '#6b4a6e', '#85504a'], note: '身上的裂紋是力量的光。' },
     { id: 'flame', land: 3, name: '火苗頭', body: 'pear', colors: ['#ff7e5f', '#ff9a4d', '#ff6f91'], note: '開心時火苗會跳舞。' },
     { id: 'coal', land: 3, name: '炭炭', body: 'round', colors: ['#5f5a70', '#6a5f66', '#565f75'], note: '外面黑黑，裏面暖暖。' },
     { id: 'antenna', land: 4, name: '天線星人', body: 'tall', colors: ['#8ee3a8', '#a4e86f', '#7ddbd0'], note: '收得到遠方的打氣聲。' },
     { id: 'cyclops', land: 4, name: '一眼仔', body: 'round', colors: ['#c79bff', '#ff9bd8', '#9bb5ff'], note: '只有一隻眼，專心度最高。' },
-    { id: 'ring', land: 4, name: '環環', body: 'pear', colors: ['#ffcf70', '#ffb8a0', '#b8d8ff'], note: '腰間的光環是呼拉圈。' },
+    { id: 'ring', land: 4, name: '環環', body: 'pear', colors: ['#ffcf70', '#ffb8a0', '#b8d8ff'], note: '腰間的圓環是呼拉圈。' },
   ];
 
   const LIFTS = [
@@ -52,7 +52,7 @@
 
   const SHAPES = {
     twin: {
-      name: '雙塔門神',
+      name: '雙塔大門',
       rects: [[230, 350, 150], [650, 770, 150], [350, 650, 330], [440, 560, 240]],
       door: [462, 538, 452],
     },
@@ -70,7 +70,7 @@
 
   const ADJ = ['愛笑的', '勇敢的', '不放棄的', '慢慢來的', '眼睛亮亮的', '有耐性的', '大嗓門的', '會打氣的', '肚子餓的', '認真的'];
   const NICK = ['阿力', '小壯', '波波', '嘟嘟', '咕咕', '朗朗', '鐵鐵', '豆豆', '球球', '麻糬', '糯米', '芝麻', '布丁', '湯圓', '蛋撻', '魚蛋'];
-  const LEVELS = ['初生力士', '小力士', '大力士', '鐵臂力士', '金剛力士', '傳說力士'];
+  const LEVELS = ['初生力士', '小力士', '大力士', '鐵臂力士', '磐石力士', '傳說力士'];
 
   const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
   const randomSeed = () => Math.floor(Math.random() * 2147483640) + 1;

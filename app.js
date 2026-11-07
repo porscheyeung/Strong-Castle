@@ -137,7 +137,7 @@
     stomp() { tone(90, 0.16, 'sine', 0.2, 0, 44); },
   };
 
-  /* ---------- 精靈圖快取 ---------- */
+  /* ---------- 圖像快取 ---------- */
   function sprite(c, expr, px) {
     const key = `${c.species}|${c.variant}|${c.level}|${c.rare ? 1 : 0}|${expr}|${px}`;
     let sp = sprites.get(key);
