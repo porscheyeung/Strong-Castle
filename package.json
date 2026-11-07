@@ -1,0 +1,13 @@
+{
+  "name": "strong-castle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "強壯城堡：做題孵小力士，改錯練大力氣",
+  "scripts": {
+    "test": "node --test tests/engine.test.js && playwright test",
+    "start": "python3 -m http.server 4188 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}

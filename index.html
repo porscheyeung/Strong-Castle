@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>強壯城堡 Strong Castle</title>
+  <meta name="description" content="做題孵出小力士，改錯練出大力氣。一座由活生生小力士托舉而成、會舉重、會走路的城堡。">
+  <meta name="theme-color" content="#ffcf4d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%92%AA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-land="meadow">
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <canvas id="mascot" width="112" height="112" aria-hidden="true"></canvas>
+        <div>
+          <h1 id="title">強壯城堡</h1>
+          <p id="subtitle">做題孵小力士，改錯練大力氣</p>
+        </div>
+      </div>
+      <div class="tools">
+        <button id="btnSound" class="tool" type="button" aria-label="音效" aria-pressed="true">♪</button>
+        <button id="btnFull" class="tool" type="button" aria-label="全螢幕">⛶</button>
+        <button id="btnMenu" class="tool" type="button" aria-label="城堡設定">☰</button>
+      </div>
+    </header>
+
+    <section class="stage" id="stageWrap">
+      <canvas id="stage" tabindex="0" role="img" aria-label="強壯城堡"></canvas>
+      <div class="zoom" role="group" aria-label="畫面縮放">
+        <button id="zoomOut" type="button" aria-label="縮小">−</button>
+        <button id="zoomHome" type="button" aria-label="看整座城堡">全景</button>
+        <button id="zoomIn" type="button" aria-label="放大">＋</button>
+      </div>
+      <div class="land-tag" id="landTag"></div>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <div id="card" class="card" hidden>
+        <canvas id="cardArt" width="168" height="168" aria-hidden="true"></canvas>
+        <div class="card-body">
+          <strong id="cardName"></strong>
+          <span id="cardMeta"></span>
+          <em id="cardNote"></em>
+          <div class="card-actions">
+            <button id="cardRename" type="button">改名</button>
+            <button id="cardClose" type="button">關閉</button>
+          </div>
+        </div>
+      </div>
+      <div id="stretch" class="stretch" hidden>
+        <b id="stretchTitle"></b>
+        <span id="stretchLine"></span>
+        <div class="stretch-bar"><i id="stretchFill"></i></div>
+        <button id="stretchSkip" type="button">完成休息</button>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <div class="meters">
+        <div class="meter">
+          <span class="label">小力士</span>
+          <span class="value"><b id="count">0</b><small>／<span id="goal">30</span></small></span>
+          <div class="bar" role="progressbar" aria-label="小力士進度" id="goalBar"><i id="goalFill"></i></div>
+        </div>
+        <div class="meter power">
+          <span class="label">全城力量</span>
+          <span class="value"><b id="power">0</b></span>
+          <span class="hint" id="trainInfo">改正一次＝3 點力量</span>
+        </div>
+      </div>
+
+      <div id="mainActions" class="actions">
+        <button id="btnHatch" class="big hatch" type="button"><span class="ic" aria-hidden="true">🥚</span><span><b id="hatchLabel">完成一題</b><small id="hatchSub">孵出一隻小力士</small></span></button>
+        <button id="btnTrain" class="big train" type="button"><span class="ic" aria-hidden="true">💪</span><span><b>勇敢改正</b><small id="trainSub">讓一隻小力士練強</small></span></button>
+        <button id="btnLift" class="lift" type="button"><span class="ic" aria-hidden="true">🏋️</span><span><b id="liftName">舉重挑戰</b><small id="liftInfo"></small></span></button>
+        <div class="minis">
+          <button id="btnStretch" type="button">🧘 力量操</button>
+          <button id="btnDex" type="button">📖 圖鑑</button>
+          <button id="btnLog" type="button">📅 紀錄</button>
+          <button id="btnUndo" type="button">↶ 復原</button>
+        </div>
+      </div>
+
+      <div id="liftActions" class="actions" hidden>
+        <p class="lift-title" id="liftTitle"></p>
+        <div class="bar heave" role="progressbar" aria-label="舉起進度" id="heaveBar"><i id="heaveFill"></i></div>
+        <button id="btnHeave" class="big heave-btn" type="button"><span class="ic" aria-hidden="true">🔥</span><span><b>一二三，舉！</b><small>快速連按，也可按空白鍵</small></span></button>
+        <div class="minis two">
+          <button id="btnShout" type="button" aria-pressed="false">📣 用喊聲舉</button>
+          <button id="btnLiftLater" type="button">等一下再舉</button>
+        </div>
+        <p class="fine" id="shoutNote">喊聲只用來量音量，不會錄音，也不會傳出這部裝置。</p>
+      </div>
+    </aside>
+  </div>
+
+  <dialog id="dialog" class="dialog"><div id="dialogBody"></div></dialog>
+  <input id="fileInput" type="file" accept="application/json,.json" hidden>
+
+  <script src="engine.js"></script>
+  <script src="art.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
